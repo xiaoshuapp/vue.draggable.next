@@ -7,7 +7,7 @@
         "checkJs": true,
         "emitDeclarationOnly": true,
         "downlevelIteration": true,
-        "esModuleInterop": true, 
+        "esModuleInterop": true,
         "outDir": "./types",
         "declaration": true
     },

@@ -42,6 +42,8 @@
     "@babel/eslint-parser": "^7.18.2",
     "@popperjs/core": "^2.11.5",
     "@types/sortablejs": "^1.10.7",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "@vue/cli-plugin-babel": "5.0.6",
     "@vue/cli-plugin-eslint": "5.0.6",
     "@vue/cli-plugin-unit-jest": "5.0.6",
