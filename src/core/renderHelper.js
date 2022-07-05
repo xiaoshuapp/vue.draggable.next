@@ -9,7 +9,7 @@ function getSlot(slots, key) {
 
 function computeNodes({ $slots, realList, getKey }) {
   const normalizedList = realList || [];
-  const [header, footer] = ["header", "footer"].map(name =>
+  const [header, footer] = ["header", "footer"].map((name) =>
     getSlot($slots, name)
   );
   const { item } = $slots;
@@ -17,7 +17,7 @@ function computeNodes({ $slots, realList, getKey }) {
     throw new Error("draggable element must have an item slot");
   }
   const defaultNodes = normalizedList.flatMap((element, index) =>
-    item({ element, index }).map(node => {
+    item({ element, index }).map((node) => {
       node.key = getKey(element);
       node.props = { ...(node.props || {}), "data-draggable": true };
       return node;
@@ -29,7 +29,7 @@ function computeNodes({ $slots, realList, getKey }) {
   return {
     header,
     footer,
-    default: defaultNodes
+    default: defaultNodes,
   };
 }
 
@@ -43,7 +43,7 @@ function getRootInformation(tag) {
       ? resolveComponent(tag)
       : transition
       ? TransitionGroup
-      : tag
+      : tag,
   };
 }
 

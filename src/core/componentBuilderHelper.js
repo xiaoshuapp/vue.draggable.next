@@ -11,37 +11,42 @@ function project(entries) {
 
 function getComponentAttributes({ $attrs, componentData = {} }) {
   const attributes = project(
+    // eslint-disable-next-line no-unused-vars
     Object.entries($attrs).filter(([key, _]) => isHtmlAttribute(key))
   );
   return {
     ...attributes,
-    ...componentData
+    ...componentData,
   };
 }
 
 function createSortableOption({ $attrs, callBackBuilder }) {
   const options = project(getValidSortableEntries($attrs));
   Object.entries(callBackBuilder).forEach(([eventType, eventBuilder]) => {
-    events[eventType].forEach(event => {
+    events[eventType].forEach((event) => {
       options[`on${event}`] = eventBuilder(event);
     });
   });
   const draggable = `[data-draggable]${options.draggable || ""}`;
   return {
     ...options,
-    draggable
+    draggable,
   };
 }
 
 function getValidSortableEntries(value) {
-  return Object.entries(value)
-    .filter(([key, _]) => !isHtmlAttribute(key))
-    .map(([key, value]) => [camelize(key), value])
-    .filter(([key, _]) => !isReadOnly(key));
+  return (
+    Object.entries(value)
+      // eslint-disable-next-line no-unused-vars
+      .filter(([key, _]) => !isHtmlAttribute(key))
+      .map(([key, value]) => [camelize(key), value])
+      // eslint-disable-next-line no-unused-vars
+      .filter(([key, _]) => !isReadOnly(key))
+  );
 }
 
 export {
   getComponentAttributes,
   createSortableOption,
-  getValidSortableEntries
+  getValidSortableEntries,
 };
