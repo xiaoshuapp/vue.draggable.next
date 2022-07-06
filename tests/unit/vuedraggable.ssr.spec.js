@@ -10,11 +10,11 @@ const app = createSSRApp({
   name: "test-app",
   template: `<draggable :list="items" :item-key="k => k"><template #item="{element}"><div>{{element}}</div></template></draggable>`,
   data: () => ({
-    items: ["a", "b", "c"]
+    items: ["a", "b", "c"],
   }),
   components: {
-    draggable
-  }
+    draggable,
+  },
 });
 
 let html;
@@ -25,7 +25,7 @@ describe("vuedraggable in a SSR context", () => {
   });
 
   it("can be rendered", () => {
-    const expected =`<div><div data-draggable="true">a</div><div data-draggable="true">b</div><div data-draggable="true">c</div></div>`;
+    const expected = `<div><div data-draggable="true">a</div><div data-draggable="true">b</div><div data-draggable="true">c</div></div>`;
     expect(html).toEqual(expected);
   });
 });
