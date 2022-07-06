@@ -1,5 +1,5 @@
 {
-  "name": "@xiaoshu/draggable",
+  "name": "@xiaoshuapp/draggable",
   "version": "4.1.1",
   "description": "draggable component for vue",
   "license": "MIT",
@@ -7,7 +7,7 @@
   "types": "types/vuedraggable.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SortableJS/Vue.Draggable.git"
+    "url": "git+https://github.com/SortableJS/Vue.Draggable.git"
   },
   "private": false,
   "scripts": {
@@ -88,5 +88,15 @@
     "types/*",
     "src/*"
   ],
-  "module": "dist/vuedraggable.umd.js"
+  "module": "dist/vuedraggable.umd.js",
+  "bugs": {
+    "url": "https://github.com/SortableJS/Vue.Draggable/issues"
+  },
+  "homepage": "https://github.com/SortableJS/Vue.Draggable#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "example",
+    "test": "tests"
+  },
+  "author": ""
 }
