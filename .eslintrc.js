@@ -7,8 +7,9 @@ module.exports = {
   parserOptions: {
     parser: "@babel/eslint-parser",
   },
-  rules: {},
-  //highlight-start
+  rules: {
+    "vue/multi-word-component-names": "off",
+  },
   overrides: [
     {
       files: "**/*.+(ts|tsx)",

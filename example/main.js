@@ -14,7 +14,7 @@ require("bootstrap");
 
 const router = createRouter({
   history: createWebHashHistory("/vue.draggable.next/"),
-  routes
+  routes,
 });
 
 const app = createApp(App)

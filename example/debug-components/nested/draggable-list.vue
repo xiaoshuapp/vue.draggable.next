@@ -18,32 +18,32 @@
 
 <script>
 import draggable from "@/vuedraggable";
-let id = 1;
+// let id = 1;
 export default {
   name: "draggable-list",
   components: {
-    draggable
+    draggable,
   },
   props: {
     list: {
       type: Array,
-      required: true
+      required: true,
     },
     enabled: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      dragging: false
+      dragging: false,
     };
   },
   computed: {
     draggingInfo() {
       return this.dragging ? "under drag" : "";
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
