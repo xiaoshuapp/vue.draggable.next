@@ -1,6 +1,6 @@
 import type { DefineComponent } from "vue";
-export default draggableComponent;
-declare const draggableComponent: DefineComponent<
+
+type Component<T extends Record<string, unknown>> = DefineComponent<
   {
     list: {
       type: ArrayConstructor;
@@ -34,7 +34,7 @@ declare const draggableComponent: DefineComponent<
       default: any;
     };
   },
-  any,
+  any, // Raw Binding
   {
     error: boolean;
   },
@@ -78,7 +78,7 @@ declare const draggableComponent: DefineComponent<
       move: Function;
       // eslint-disable-next-line @typescript-eslint/ban-types
       clone: Function;
-      componentData: Record<string, any>;
+      componentData: T;
       tag: string;
       list: unknown[];
       modelValue: unknown[];
@@ -92,9 +92,12 @@ declare const draggableComponent: DefineComponent<
     move: Function;
     // eslint-disable-next-line @typescript-eslint/ban-types
     clone: Function;
-    componentData: Record<string, unknown>;
+    componentData: T;
     tag: string;
     list: unknown[];
     modelValue: unknown[];
   }
 >;
+
+export default draggableComponent;
+declare const draggableComponent: Component;
