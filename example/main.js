@@ -8,7 +8,7 @@ import store from "./store";
 import ElementPlus from "element-plus";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-import "element-plus/lib/theme-chalk/index.css";
+import "element-plus/dist/index.css";
 
 require("bootstrap");
 
