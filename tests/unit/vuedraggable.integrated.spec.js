@@ -35,8 +35,13 @@ const expectedDomWithWrapper = (wrapper, attr = "") =>
     .map((nu) => `<div data-draggable="true">${nu}</div>`)
     .join("")}</${wrapper}>`;
 
+const expectedTransitionDomWithWrapper = (wrapper, attr = "") =>
+  `<${wrapper}${attr}>${expectedArray
+    .map((nu) => `<div data-draggable="true"><span>${nu}</span></div>`)
+    .join("")}</${wrapper}>`;
+
 const expectedDomNoTransition = expectedDomWithWrapper("span");
-const expectedDomTransition = expectedDomWithWrapper("div");
+const expectedDomTransition = expectedTransitionDomWithWrapper("div");
 const expectedDomComponent = expectedDomWithWrapper(
   "div",
   ' class="fake-root" id="my-id"'

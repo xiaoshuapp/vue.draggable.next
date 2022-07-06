@@ -6,7 +6,9 @@
     :item-key="(key) => key"
   >
     <template #item="{ element }">
-      <div>{{ element }}</div>
+      <div>
+        <span>{{ element }}</span>
+      </div>
     </template>
   </draggable>
 </template>
